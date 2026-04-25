@@ -720,13 +720,13 @@ jobs:
 
       - name: 上传 Ccache 调试日志
         if: always() && inputs.ccache_debug
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ccache-debug-log
           path: ${{ github.workspace }}/kernel_workspace/ccache.log
 
       - name: 上传 ZIP 工件
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Kernel_ZIP_Artifacts
           path: ${{ github.workspace }}/kernel_workspace/AnyKernel*.zip
@@ -741,7 +741,7 @@ jobs:
       
     steps:
       - name: 下载 ZIP 工件
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: Kernel_ZIP_Artifacts
           path: ./release_zips
